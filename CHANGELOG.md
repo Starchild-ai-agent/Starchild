@@ -56,21 +56,6 @@ Starchild has evolved from a strategy creation tool into a complete personal AI 
 - Added XAU/XAG (gold/silver) trading support
 - Added Watchlist and My Strategy sections to leaderboard
 - Added profile picture editing in Account Management
-- Improved tick size and execution accuracy for paper trading
-- Improved strategy generation to handle more complex strategies
-- Improved strategy generation diversity and response formatting
-- Improved strategy analysis accuracy with upgraded reasoning
-- Improved chat flow and user guidance during strategy creation
-- Improved chat page UI/UX
-- Improved navigation bar and homepage UI styling
-- Improved connection stability with optimized heartbeat intervals
-- Changed "All Time APR" to "ROE" on leaderboard, with APR shown for strategies over 30 days with positive ROE
-- Fixed XAU/XAG validation errors when creating strategies
-- Fixed price data not being read correctly in some API responses
-- Fixed duplicate trade signals being sent
-- Fixed strategies failing due to API rate limiting
-- Fixed page crashes after creating strategies
-- Fixed connection timeouts during idle periods
 
 ## 1.1.1
 
