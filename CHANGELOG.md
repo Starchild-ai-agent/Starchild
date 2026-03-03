@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.0.3
+
+- Added support for multiple simultaneous conversations
+- Added scheduled task execution with detailed logs
+- Added share page with on-demand data loading to optimize performance
+- Added prompt cache update
+- Improved memory system
+- Improved browser-preview skill by removing localhost text
+- Fixed issues with Twelve Data API
+- Fixed issue where images displayed incorrectly when using preview service
+- Fixed issue where some users could not load more historical conversations
+- Fixed occasional issue where input box image could not be cleared after sending a message
+- Fixed issue of data loss after sharing
+- Fixed issue where thinking data was not persistently saved after disconnecting chat
+
 ## 2.0.2
 
 - Added browser-preview skill allowing agents to recognize browser functionality within front-end pages
