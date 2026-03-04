@@ -3,10 +3,10 @@
 ## 2.0.4
 
 - Added gift card redemption
-- Improved decision tree system tuning
-- Improved wallet policy changes
-- Fixed skill loader to enable proper functionality
-- Fixed Orderly skill commodities handling
+- Improved decision tree prompt
+- Improved wallet policy prompt 
+- Fixed skill loader to detect all tools new and old
+- Fixed Orderly skill commodities handling when it comes to externally added skills
 - Fixed loading message not disappearing after SSE disconnection when conversation already completed
 
 ## 2.0.3
