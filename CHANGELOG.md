@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.0.5
+
+- Added credit system
+- Added support for inserting messages in dialogue to continue conversations
+- Improved user agent creation time, reducing from 20-30 seconds to around 5 seconds
+- Improved prompt cache to increase cache hit rate
+- Improved memory management
+- Updated default model from Sonnet 4 to Sonnet 4.6
+- Fixed tool loader
+- Fixed display anomalies caused by SSE disconnection when running in background on mobile
+- Fixed logout caused by wallet disconnection
+- Fixed issue where clicking a link on mobile cannot directly open workspace
+
 ## 2.0.4
 
 - Added gift card redemption
