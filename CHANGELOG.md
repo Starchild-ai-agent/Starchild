@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.0.6
+
+- Added preview-dev to guide web development
+- Added dialog input box to cache user input information
+- Added agent reply and user input copy function
+- Added support for the Gemini 1.5 Flash Lite model
+- Added support for internal API calls within localhost in machine
+- Added model smart selection for scheduled tasks
+- Added model cost in the agent runtime information
+- Added new skills and endpoints
+- Fixed the issue of authentication information disorder caused by the refresh token not being deleted
+- Fixed the abnormal status display issue when the agent is working in the background
+- Fixed the issue of port occupation in the preview server
+- Fixed persisting user customized installation issues
+- Fixed charting not showing in chat
+- Fixed skills and tools issues
+- Fixed job scheduler
+
 ## 2.0.5
 
 - Added credit system
