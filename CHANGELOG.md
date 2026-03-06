@@ -5,7 +5,7 @@
 - Added preview-dev to guide web development
 - Added dialog input box to cache user input information
 - Added agent reply and user input copy function
-- Added support for the Gemini 1.5 Flash Lite model
+- Added support for the Gemini 3.1 Flash-Lite
 - Added support for internal API calls within localhost in machine
 - Added model smart selection for scheduled tasks
 - Added model cost in the agent runtime information
