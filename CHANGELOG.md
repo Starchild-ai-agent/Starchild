@@ -1,5 +1,38 @@
 # Changelog
 
+## 2.0.7
+
+- Added Telegram bot service supporting private bot binding
+- Added voice input support for web interface
+- Added support for deleting completed and canceled scheduled tasks
+- Added identifiers to Telegram threads for easier distinction
+- Added model prices in model selection
+- Added dashboard skill with comprehensive monitoring capabilities
+- Added one-shot prompt system that proactively fixes errors until task completion
+- Improved chat input box by removing character limit
+- Improved display during tool execution
+- Improved display of tables in Telegram
+- Improved charting skill with overhauled prompt handling
+- Improved agent understanding of proxy system
+- Improved agent file editing to check for similar tasks and edit instead of recreating files to save tokens
+- Improved dynamic chunking to prevent timeouts on long-running tasks by splitting into smaller subtasks within token limits
+- Improved skill prompt handling and overhauled problematic prompts
+- Fixed issue where dragging an image into chat input box resulted in duplicate images
+- Fixed timezone handling for scheduled tasks in container
+- Fixed issue where currentModel settings were being reset
+- Fixed issue where messages were refreshed due to jobs resulting in information loss
+- Fixed issue where Telegram could not recognize files sent to users
+- Fixed errors in Bash Tool
+- Fixed chart not showing in chat with added guardrails and definite prompts
+- Fixed error issues regarding maximum iteration limits
+- Fixed CoinGecko tools
+- Fixed Birdeye tools
+- Changed to unified marketplace
+- Changed Telegram replies to display specific model name
+- Enhanced tool schema validation for Gemini models
+- Removed skills MCP integration
+- Removed some supported networks from wallet integration after review
+
 ## 2.0.6
 
 - Added preview-dev to guide web development
