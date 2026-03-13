@@ -1,5 +1,29 @@
 # Changelog
 
+## 2.0.8
+
+- Added official skills repository infrastructure with dedicated repo for building and publishing skills
+- Added GitHub Actions workflow for automatic frontmatter validation and skills.json rebuild
+- Added container pre-install system for automatic official skills installation/updates on first launch
+- Added skills-lock.json for tracking installed skill versions
+- Added /compact command in Telegram bot
+- Added /mute command in Telegram bot to disable scheduled job notifications
+- Added project showcase in workspace displaying user-deployed websites
+- Added asset information display in agent wallet
+- Added option to hide usage information in Telegram bot responses
+- Added safety net prompt in Telegram bot credits
+- Improved launch my agent process optimization
+- Improved charting system with enhanced functionality
+- Improved core prompts for better agent responses
+- Fixed issue where thread sharing images were not displaying
+- Fixed voice input functionality bug
+- Fixed Telegram bot inter-user messaging issue
+- Fixed Orderly integration issues
+- Fixed wallet-related bugs
+- Fixed Polymarket integration
+- Removed whitelist requirement for private chat functionality in Telegram
+- Changed skills management to npx skills system with integration documentation
+
 ## 2.0.7
 
 - Added Telegram bot service supporting private bot binding
