@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.0.9
+
+- Added real-time display writing during SSE output
+- Added more logs and persistent logging in machine for debugging
+- Improved projects UI optimization
+- Improved display, editing, and deletion of inserted messages
+- Improved SSE reconnection mechanism for web + tgbot
+- Improved proactive skill system with further enhancements
+- Improved websearch system that now uses past searches to build on the next search to create a more refined and deterministic research function and reduces duplicate searches and loops
+- Fixed issue where the project resets after being set to public
+- Fixed issue where forward messages in tgbot group chats and private chats could not recognize context
+- Fixed issue where tgbot group chats did not recognize images + text
+- Fixed positioning issue of the workspace right-click menu
+- Fixed agent tool timeout handling and AI error retry logic
+- Fixed schedule task refactoring and error reporting issues
+- Fixed memory inject issues in agent
+- Removed old orderly skills (orderly and orderly one) and replaced with the official orderly skill
+
 ## 2.0.8
 
 - Added official skills repository infrastructure with dedicated repo for building and publishing skills
