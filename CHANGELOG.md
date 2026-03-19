@@ -1,5 +1,24 @@
 # Changelog
 
+## 2.1.0
+
+- Added new models:
+  - x-ai/grok-4.20-beta (standard)
+  - openai/gpt-5.4-nano (budget)
+  - qwen/qwen3.5-9b (budget)
+  - openai/gpt-5.4-mini (standard)
+- Added website snapshot service optimizing image display for the project
+- Added skill market
+- Added close button to toast for more intuitive user operation
+- Added display of all launched websites when browser has no tabs
+- Added V1 self learning module for AI to learn from its mistakes
+- Improved workspace sizing bar - double-clicking will snap it back to default position
+- Improved agent error messages
+- Fixed issues with skill install, empty response and error handling
+- Fixed job cost tracking
+- Fixed Hyperliquid integration to all instances
+- Fixed prompt to show transactions on onchain transactions when returned in call
+
 ## 2.0.9
 
 - Added real-time display writing during SSE output
