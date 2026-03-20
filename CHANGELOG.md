@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.2.0
+## 2.1.1
 
 - Added Doctor Mode: /doctor command to help users diagnose and inspect machine issues
 - Added Push Notification Controls: block or silence push notifications based on specific conditions
