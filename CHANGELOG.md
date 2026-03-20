@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.2.0
+
+- Added Doctor Mode: /doctor command to help users diagnose and inspect machine issues
+- Added Push Notification Controls: block or silence push notifications based on specific conditions
+- Added new model: Minimax 2.7
+- Improved self learning module 
+- Fixed self learning versioning to persist after deployments or updates
+- Fixed skill display issue
+
 ## 2.1.0
 
 - Added new models:
