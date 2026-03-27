@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.1.2
+
+- Added WeChat connector for seamless integration with WeChat bot
+- Added policy control switch for wallet management
+- Added Woo staking recharge discount content
+- Added wallet policy updates for enhanced control
+- Added machine pre-warming logic that pre-installs all necessary resources when creating machines
+- Added agent identity with configurable items through agent settings
+- Added project click collection statistics tracking
+- Improved recharge display for better user experience
+- Improved startup scripts and skill management to skip unchanged skills on restart
+- Improved skill installation by running install jobs in the background
+- Improved agent runtime info to enhance session details
+- Improved model's startup process by moving heavy logic to background for faster startup and restart speeds
+- Fixed issue where user status was lost after WeChat bot restart
+
 ## 2.1.1
 
 - Added Doctor Mode: /doctor command to help users diagnose and inspect machine issues
