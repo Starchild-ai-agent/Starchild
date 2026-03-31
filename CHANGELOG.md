@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.1.3
+
+- Added display of agent identity information, supporting changes to agent information (name, avatar, emoji, etc.) through conversation
+- Added support for binding and unbinding of Telegram bot and WeChat bot through conversation
+- Added support for adding Telegram whitelist through conversation
+- Added support for switching Telegram bot/WeChat bot push notifications on and off through conversation
+- Added ability for agent to send messages to Telegram bot, WeChat bot, Telegram bot whitelist, and Telegram bot group chats, including text information, file information, etc.
+- Added skill download and view count statistics and display
+- Added project favorites and view count statistics and display
+- Added user information popup to display agent information, as well as published projects and skills
+- Added official gas sponsorship for all agent wallets
+- Improved agent's self-calling ability to support the new alert system
+
 ## 2.1.2
 
 - Added WeChat connector for seamless integration with WeChat bot
