@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.1.4
+
+- Added Korean language switch feature for multilingual support
+- Added buy credits functionality in Telegram bot
+- Added connector feature for expanded integrations
+- Added referral feature
+- Added daily usage trend chart for credits
+- Added Composio skill integration
+- Added new model: Grok 4.2
+- Fixed tool timeout SSE disconnection issues
+- Improved prompt optimization
+- Various minor bug fixes and feature optimizations
+
 ## 2.1.3
 
 - Added display of agent identity information, supporting changes to agent information (name, avatar, emoji, etc.) through conversation
