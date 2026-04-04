@@ -4,11 +4,18 @@
 
 - Added Korean language switch feature for multilingual support
 - Added buy credits functionality in Telegram bot
-- Added connector feature for expanded integrations
+- Added connector feature
 - Added referral feature
 - Added daily usage trend chart for credits
 - Added Composio skill integration
-- Added new model: Grok 4.2
+- Added new models:
+  - x-ai/grok-4.2
+  - z-ai/glm-5v-turbo (GLM-5V with vision support)
+  - qwen/qwen3.6-plus:free (Qwen 3.6 Plus free tier)
+  - google/gemma-4-31b-it (Gemma 4 31B)
+  - google/gemma-4-26b-a4b-it (Gemma 4 26B MoE)
+- Added agent self-triggered local push notifications, allowing users to send custom reminders via scripts within their projects
+- Improved CPU control during startup process to prevent high load during initialization
 - Fixed tool timeout SSE disconnection issues
 - Improved prompt optimization
 - Various minor bug fixes and feature optimizations
