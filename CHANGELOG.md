@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.1.5
+
+- Added popup form for skills and project with small screen adaptation
+- Added right-click upload feature to workspace directory
+- Added error log monitoring on the frontend
+- Added new models:
+  - z-ai/glm-5.1
+  - qwen3.6-plus
+- Restructured system prompt to reduce prompt cost with references doc architecture; users can now customize their agent through SOUL.md, IDENTITY.md, USER.md in workspace
+- Updated preinstall project-builder skill to support end-to-end project engineering
+- Improved web performance and reduced package size
+- Improved Telegram bot security: token and private keys are now entered through a popup in the conversation and no longer recorded in chat
+- Added protections to prevent infinite tool-call loops
+- Various minor bug fixes and optimizations
+
 ## 2.1.4
 
 - Added Korean language switch feature for multilingual support
