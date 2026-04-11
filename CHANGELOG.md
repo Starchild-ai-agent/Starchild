@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.6
+
+- Added shortcut command pop-up on web for faster command access
+- Improved context compaction with distinct summarizer prompts for sessions and tasks, saving important memory before conversations are compressed
+- Improved memory system with upgrades across storage and recall
+- Improved smart routing default rules
+- Improved cost tracking with comprehensive coverage across all proxy call paths, integrated with credit API to track combined LLM and proxy costs per task
+- Improved agent error recovery and resolved issues where failed tools could cause infinite retry loops
+- Fixed clear command issues and optimized compact logic to prevent context contamination
+
 ## 2.1.5
 
 - Added popup form for skills and project with small screen adaptation
