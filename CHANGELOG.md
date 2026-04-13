@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.7
+
+- Optimized tool result limits handling and enhanced system guidance for exceptional cases
+- Optimized cache cleaning during machine startup and improved the suspend user experience
+- Strengthened tools loop prevention of the agent
+- Simplified compact and flush process during chat
+- Fixed flush loop and reconnect failure during memory flush
+- Fixed file watcher push notification delivery
+- Fixed Twitter URL handling error
+
 ## 2.1.6
 
 - Added shortcut command pop-up on web for faster command access
