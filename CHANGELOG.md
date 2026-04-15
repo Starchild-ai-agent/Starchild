@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.1.8
+
+- Upgraded task notifications — your agent now has full control over what it sends, how it looks, and where it goes
+- Expanded wallet support to cover all chains available on DeBank
+- Fixed an issue where conversation summaries could interfere with ongoing chats
+- Added a new tool that lets your agent manage its own skills and improve over time
+- Switched the default AI model to Smart Routing for better performance and lower cost
+- Added a built-in slide creator skill — ready to use out of the box
+
 ## 2.1.7
 
 - Optimized tool result limits handling and enhanced system guidance for exceptional cases
