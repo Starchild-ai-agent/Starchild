@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.9
+
+- Fixed wallet API errors and added support for transaction gas sponsorship configuration
+- Fixed model call timeouts and improved retry logic for more reliable responses
+- Fixed an issue where the agent could hallucinate about previous tool calls
+- Upgraded to a new chart skill that creates interactive charts
+
 ## 2.1.8
 
 - Upgraded task notifications — your agent now has full control over what it sends, how it looks, and where it goes
