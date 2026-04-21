@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.0
+
+- Added agent config management — your agent can now help manage memory, compaction, and loop settings directly within the workspace
+- Added custom model endpoints — bring your own API key to connect to any LLM provider, with custom models appearing in the model selector alongside platform models
+- Added dynamic model catalog — model list is now fetched from the backend in real time, making new models available immediately without image redeployment
+- Added new model: Kimi K2.6
+- Fixed tool parameter type coercion
+
 ## 2.1.9
 
 - Fixed wallet API errors and added support for transaction gas sponsorship configuration
