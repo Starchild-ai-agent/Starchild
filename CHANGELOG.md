@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.1
+
+- Hardened memory review — high-value entries are now protected from accidental deletion and must be migrated first
+- Fixed parameter leaking between sub-tools, Composio connection cache, and duplicate user ID in community publish URLs
+- Added new model: ling-2.6-flash:free
+
 ## 2.2.0
 
 - Added agent config management — your agent can now help manage memory, compaction, and loop settings directly within the workspace
