@@ -1,8 +1,14 @@
 # Changelog
 
+## 2.2.2
+
+- Fixed Composio cache refresh after connection
+- Fixed wallet export when policy is enabled
+- Added new models: Xiaomi MiMo v2.5 and MiMo v2.5 Pro (replaces MiMo v2)
+
 ## 2.2.1
 
-- Hardened memory review — high-value entries are now protected from accidental deletion and must be migrated first
+- Hardened memory review — high-value entries are now protected from accidental deletion
 - Fixed parameter leaking between sub-tools, Composio connection cache, and duplicate user ID in community publish URLs
 - Added new model: ling-2.6-flash:free
 
