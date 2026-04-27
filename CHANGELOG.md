@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.2.3
+
+- Image Generation: Added custom save path support. Fixed model confusion between chat and image models.
+- Session Search: Session search now works across all conversation threads.
+- Custom Models: Optimized model config setting guidance — can directly paste vendor API example and the model auto-configures. Fixed Anthropic native connection issues in custom models.
+- Custom Models: Added thinking mode support. Fixed DeepSeek V4 Pro custom model error.
+- Added new models: DeepSeek V4 Pro, DeepSeek V4 Flash, and GPT-5.5
+- Fixed compact summary cut-off issues
+- Fixed empty responses on certain models
+- Fixed lost replies during chained reconnects
+- Fixed Text Response display when models return both Thinking and Text
+- Added skill tools loading protection to prevent faulty skills from affecting other tools
+
 ## 2.2.2
 
 - Fixed Composio cache refresh after connection
