@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.4
+
+- Optimized incomplete or interrupted responses handling for budget models (Kimi, etc.) during long conversations
+- Fixed cloud model cache hit rate degradation in long conversations
+- Added new models: Qwen 3.6 Flash, Qwen 3.6 35B-A3B, and Qwen 3.6 Max Preview (replaces Qwen Turbo and Qwen 3.5 9B)
+
 ## 2.2.3
 
 - Image Generation: Added custom save path support. Fixed model confusion between chat and image models.
