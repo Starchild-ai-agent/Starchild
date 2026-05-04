@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.2.5
+
+- Added script-mode skill delivery to reduce preloaded tool schema and improve prompt-cache stability
+- Enabled OpenRouter response cache by default
+- Claude models defaults set to google-vertex provider for lower cost
+- Fixed Smart Router misrouting and improved message classification
+- Expanded telemetry on tool errors as a foundation for ongoing analysis and iteration
+- Fixed tool-result issues that confused the model and reduced upstream risk-control friction; fix wrong error messages and guidance
+- Support IPv6 IP configuration for Anthropic BYOK
+- Add Smart Routing Rules API to alert users when new rules are updated
+- Fix Custom Model and OAuth error prompts, optimizing error guidance to help users complete the configuration process
+- Remove Laguna models due to privacy concerns
+- Added OAuth sign-in for ChatGPT Codex models (internal test) — users can now hand their ChatGPT subscription to the Agent and let it use the models they already pay for
+- Added one-key setup for Custom Models (BYOK) — top vendors (Anthropic, OpenAI, DeepSeek, Qwen, etc.) can now be configured directly with an API key
+
 ## 2.2.4
 
 - Optimized incomplete or interrupted responses handling for budget models (Kimi, etc.) during long conversations
