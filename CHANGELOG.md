@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.2.6
+
+- Refactored and optimized the entire Prompt Cache architecture to increase cache hit ratio, especially on long-running conversations and premium models (Claude Opus)
+- Optimized cache-control algorithm to maximize cache hit ratio, and use Google Vertex as the primary provider to reduce costs
+- Fixed and optimized Memory loading and injection capabilities to ensure that Memory updates are perceived by the agent immediately
+- Optimized Smart Routing rules to reduce model-capability mismatches caused by lower-tier models
+- Compatibility fixes for output adaptation on a few models (Gemma)
+- Cleaned up scattered files at the workspace root, consolidating everything under output/ to prevent root pollution
+- Fixed duplicate workspace creation, making the directory structure clearer
+
 ## 2.2.5
 
 - Added script-mode skill delivery to reduce preloaded tool schema and improve prompt-cache stability
