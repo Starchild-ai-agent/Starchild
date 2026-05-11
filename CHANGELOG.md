@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.2.7
+
+- Decoupled official skills into script calls instead of tool calls (except Wallet tool); all skills updated to latest version
+- Added new models: Ring 2.6 1T (Free), Hunyuan HY3 Preview (free trial expired), Gemini 3.1 Flash Lite (replaces preview version)
+- Updated Smart Routing rules: simple requests now use minimax/minimax-m2.7 (cheaper and faster), auto-falls back to qwen/qwen3.6-plus when message contains an image
+- Added cost tracking for user proxy API usage
+- Added image and video generation info tracking
+- Fixed Smart Routing rule issues, background review issues, and machine auto-suspend issues
+
 ## 2.2.6
 
 - Refactored and optimized the entire Prompt Cache architecture to increase cache hit ratio, especially on long-running conversations and premium models (Claude Opus)
