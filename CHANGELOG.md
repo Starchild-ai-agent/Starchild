@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.8
+
+- Reduced baseline prompt/tool-schema size by consolidating prompt guidance and moving certain flows into skills
+- Added script-mode runtime bridge so skills can request secure input and refresh agent config without keeping large tools always loaded
+- Lazy-hide Telegram/WeChat post-binding tools until the user has those integrations connected
+- Added Starchild FAQ reference for billing, models, privacy, and common user questions
+
 ## 2.2.7
 
 - Decoupled official skills into script calls instead of tool calls (except Wallet tool); all skills updated to latest version
