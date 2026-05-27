@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.9
+
+- Improved reply stability by preventing pre-tool text and internal thinking blocks from being reused as final answers, with retries for empty visible responses
+- Improved web fetch decoding for pages with mismatched or invalid charsets
+- Added bash safety checks for dangerous commands, including hard blocks for system-level destructive operations and confirmation for workspace-destructive actions
+- Added disk-pressure detection and proactive warnings when /data is close to full
+
 ## 2.2.8
 
 - Reduced baseline prompt/tool-schema size by consolidating prompt guidance and moving certain flows into skills
