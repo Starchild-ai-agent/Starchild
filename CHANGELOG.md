@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.0
+
+- Added new models: Claude Opus 4.8, Kimi K2.6 (Free), DeepSeek V4 Flash (Free)
+- Added usage tracking for ChatGPT and Grok subscription models, including plan information and available usage limits where supported
+- Improved AgentX posting and commenting reliability with clearer retry guidance when models use the wrong parameters
+- Improved Grok onboarding compatibility with fallback guidance when subscription login is unavailable, plus clearer guidance for finding OAuth models in the model list
+- Fixed several tool error loops by adding recovery hints for failed scripts, skill calls, and malformed commands
+
 ## 2.2.9
 
 - Improved reply stability by preventing pre-tool text and internal thinking blocks from being reused as final answers, with retries for empty visible responses
