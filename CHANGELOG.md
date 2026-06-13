@@ -1,5 +1,63 @@
 # Changelog
 
+## 2.3.6
+
+- Redirected unavailable or retired models to latest supported replacements (Fable 5 → Opus 4.8, grok3 → grok-4.3) and other previously removed model aliases
+- Improved tool recovery guidance for pytest output and invalid edit_file workspace paths
+- Added new model: Kimi K2.7 Code
+
+## 2.3.5
+
+- Updated interrupted-run recovery so agent progress can be preserved after unexpected restarts or redeploys
+- Added low-memory protection for heavy install/build commands, reducing machine crashes and giving clearer cleanup guidance
+- Strengthened memory quality rules so only verified, reusable facts are written to long-term memory
+- Fixed expired full-auth subscription routing so ChatGPT/Codex and Grok models reconnect or fallback more clearly
+- Added Model Assist executor to let the agent delegate focused work to cheaper models with cost caps and takeover guidance (internal test)
+- Added advisor and executor frontend visibility
+- Added oversized-image protection to avoid request failures from very large uploads
+- Fixed compaction model selection in OAuth model
+- Fixed Grok Build OAuth image support
+
+## 2.3.4
+
+- Added support for video-capable models (e.g. Gemini 3.5 Flash), allowing them to read uploaded video files directly
+- Added video-analysis skill, enabling non-video models to understand videos through a video model, extracted frames, transcripts, or summaries
+- Added Advisor rescue mode: enable /advisor to let a stronger model help recover when cheaper models get stuck
+- Improved model routing and context-window handling, especially for newly added or removed models
+- Made scheduled task failures easier to understand with concise, actionable error notifications instead of raw tracebacks
+- Added hard prompt rules to prevent hallucinations when users reference specific content
+
+## 2.3.3
+
+- Improved model reliability for thinking-only/max_token retry loops, subscription model routing, and usage visibility
+- Fixed Anthropic thinking-budget retry storms and set safer reasoning defaults
+- Added safer advanced workflows with custom/local shell commands and stronger tool error handling
+- Added /memory and /memory review commands for optimized memory quality, reducing duplicate and stale entries
+- Made repeated user preferences easier for the agent to remember across sessions
+- Added lightweight cross-thread awareness so the agent can understand what is happening in other conversations without replaying full history
+- Refined scheduled task setup with clearer guidance and cleaner errors
+- Strengthened date-sensitive reasoning for deadlines, schedules, and enrollment windows
+
+## 2.3.2
+
+- Added shell-backed custom slash commands that can run saved workspace commands directly in chat
+- Improved command and background-process error messages so agents can recover more reliably
+- Improved privacy for error reporting by redacting sensitive text before transmission
+- Added prompt guidance to prevent agents from promising follow-up messages and from hallucinating
+- Improved error categorization for capacity-related tool failures
+
+## 2.3.1
+
+- Added Thinking Effort controls for chat sessions, including /reasoning support for Off, Low, Medium, and High
+- Improved Thinking Effort accuracy across smart routing, BYOK, ChatGPT/Codex, Grok, OpenAI, and other supported models
+- Added clearer Thinking Effort visibility, including the actual effective setting per model for the agent
+- Fixed failures from unsupported reasoning settings on Grok Build and other non-reasoning models
+- Improved image chat reliability by storing uploaded images via cloud storage instead of large inline payloads
+- Improved memory cleanup when memory is nearly full, preserving important user corrections more reliably
+- Fixed preview startup failures when all preview ports are occupied, with clearer recovery guidance
+- Improved bash and web fetch error handling for clearer failures and better recovery
+- Added new model: qwen3.7-plus
+
 ## 2.3.0
 
 - Added new models: Claude Opus 4.8, Kimi K2.6 (Free), DeepSeek V4 Flash (Free)
