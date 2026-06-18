@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.3.9
+
+- Added Agent Lifecycle Hooks (/hooks) for custom guardrails — enable in Preferences or with '/hooks on', ask the agent to set up a hook, and approve it when prompted (internal test)
+- Fixed delayed SSE streaming in preview/community proxies so streamed responses start much faster
+
+## 2.3.8
+
+- Leaner prompt: moved non-general built-in tools to on-demand skills, cutting always-loaded tool schemas for faster and cheaper replies
+- Added custom tool scopes: define agents with their own tool sets, from lightweight core mode to full capability when needed
+- Strengthened the local /chat interface so in-container scripts and scheduled tasks can choose the responding agent, pass more options, and use temporary sessions isolated from real chat history
+- Added new model: GLM 5.2
+
+## 2.3.7
+
+- Optimized skill descriptions to make skill calls clearer and reduce prompt cost
+- Added a new Telegram message format
+- Fixed Hyperliquid skill import error
+
 ## 2.3.6
 
 - Redirected unavailable or retired models to latest supported replacements (Fable 5 → Opus 4.8, grok3 → grok-4.3) and other previously removed model aliases
