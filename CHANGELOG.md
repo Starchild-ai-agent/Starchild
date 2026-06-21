@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.4.1
+
+- Updated Hook management: approve one hook script across all configured events with '/hooks approve', and fully uninstall active hooks with '/hooks clean'
+- Added per-agent skill and tool profiles, letting agents run with scoped capabilities like hardened guest mode or market-readonly mode
+- Fixed prompt overhead when an agent has limited skills
+
+## 2.4.0
+
+- Updated Smart Routing rules to use GLM 5.2 for complex tasks
+- Added expanded Hook support, including on-user-message hooks, response-end hooks, and hook activity metadata
+- Fixed Grok reasoning behavior with safer default effort settings
+- Improved chat infrastructure with faster SSE proxy streaming, richer usage metadata, and stricter AKM agent binding
+
 ## 2.3.9
 
 - Added Agent Lifecycle Hooks (/hooks) for custom guardrails — enable in Preferences or with '/hooks on', ask the agent to set up a hook, and approve it when prompted (internal test)
