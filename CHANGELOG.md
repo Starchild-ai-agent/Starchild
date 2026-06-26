@@ -1,5 +1,27 @@
 # Changelog
 
+## 2.4.5
+
+- Added MCP & ACP support, letting Star Child connect external tools and work with ACP-compatible coding clients or harnesses
+- Improved long-running workflows with more accurate mid-loop compaction based on real input size
+- Fixed scheduled tasks so cancelled or completed jobs no longer keep running in the background
+
+## 2.4.4
+
+- Fixed credential-input flows where guidance shown before the input prompt could be dropped from the final reply, making API key setup steps clearer
+- Added startup protection against stale volume-installed Python packages shadowing image dependencies, reducing machine crash loops after deploys
+
+## 2.4.3
+
+- Upgraded Smart Routing with a three-tier model strategy, better task-structure rules, and stronger safeguards against off-rules model picks
+- Improved /delegate so mechanical subtasks are used more effectively, partial executor work can be recovered, and executor actions are easier to review/debug
+- Fixed secure input flows so the agent still gives helpful setup guidance while users complete credential popups (during Upbit skill)
+
+## 2.4.2
+
+- Optimized Smart Routing and /delegate to use cheaper models more effectively, with clearer onboarding and better executor logs for review/debugging
+- Added new supported model: Fugu Ultra
+
 ## 2.4.1
 
 - Updated Hook management: approve one hook script across all configured events with '/hooks approve', and fully uninstall active hooks with '/hooks clean'
