@@ -2,7 +2,7 @@
 
 ## 2.4.5
 
-- Added MCP & ACP support, letting Star Child connect external tools and work with ACP-compatible coding clients or harnesses
+- Added MCP & ACP support, letting Starchild connect external tools and work with ACP-compatible coding clients or harnesses
 - Improved long-running workflows with more accurate mid-loop compaction based on real input size
 - Fixed scheduled tasks so cancelled or completed jobs no longer keep running in the background
 
