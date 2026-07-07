@@ -1,5 +1,68 @@
 # Changelog
 
+## 2.4.16
+
+- Continued tool schema slimming: moved more low-frequency tools to on-demand loading, further reducing baseline prompt size and per-turn cost
+- Upgraded delegation: executor turns are no longer capped by default, and existing default configs are automatically migrated so cost and timeout become the main execution budgets
+- Fixed task reliability issues: response footer hooks no longer corrupt task JSON, and bash heredoc content is no longer mistaken as code edits for verification reminders
+- Added the x402 skill (internal test) for building and using paid agent services
+
+## 2.4.15
+
+- Added Tool Search: 16 low-frequency platform tools are now discovered on demand instead of being loaded into every request, reducing fixed prompt cost while keeping these tools fully available; improved platform-tool routing
+- Hardened skill updates to prevent unrelated third-party skills with the same name from overwriting installed official/versioned skills
+
+## 2.4.14
+
+- Improved prompt caching for OpenAI-compatible providers by keeping per-turn volatile context out of the stable prefix, reducing repeated input cost on long conversations
+- Strengthened /goal: the agent now defines what "done" means before working, and completion is judged against concrete verification evidence instead of self-reported claims
+- Fixed Smart Routing: stronger follow-up handling, and safer fallback behavior when classification fails
+
+## 2.4.13
+
+- Improved memory reliability during long conversations: important facts from compacted or pruned context are now flushed to memory before they are lost
+- Added a verification safety gate: after code changes, the agent can prompt itself to run tests or checks before claiming work is complete
+
+## 2.4.12
+
+- Added proactive memory synthesis, helping the agent understand ongoing user work, recent activity, and useful next steps while keeping owner-specific context behind trusted agent profiles
+- Improved memory updates with fuzzy matching and clearer recovery hints when a memory entry cannot be found exactly
+- Improved prompt guidance for live market prices, background task delivery, skill loading, local shell usage, and user-facing file paths
+
+## 2.4.11
+
+- Added Claude Fable 5 back and adjusted its provider priority to use Anthropic first, preventing empty replies or unwanted provider fallback; removed the old Fable-to-Opus redirect
+- Added clearer guidance when a model refuses a request for content-safety reasons (Fable 5 safety check)
+
+## 2.4.10
+
+- Improved bash failure recovery with clearer guidance when commands exit without any output
+- Added large web page paging support so oversized fetch results can be saved locally and reviewed in smaller chunks
+
+## 2.4.9
+
+- Integrated X MCP with the new x-mcp skill, and added automatic MCP hot-reload so OAuth-backed MCP integrations reconnect after token refresh
+- Added stronger follow-up reliability: when the agent promises to remind you or report back later, it now routes that promise into a scheduled task or background watcher instead of relying on memory
+- Added Skill Curator to safely archive stale agent-created skills and keep the active skill set cleaner
+- Fixed Smart Routing update banners for users on older default rules, so unchanged defaults update quietly instead of showing unnecessary alerts
+
+## 2.4.8
+
+- Updated Smart Routing (real final version): MiniMax M2.7 for simple tasks, GLM-5.2 for stronger multi-step work, and Gemini 3.1 Flash Lite for image/video inputs
+- Improved skill discovery, added soft trust labels so official/local skills rank higher without blocking community skills
+- Improved recovery for command timeouts and missing SOUL.md, with clearer error categories and next-step guidance
+
+## 2.4.7
+
+- Updated Smart Routing Optimization (final version): uses MiniMax for simple tasks and GLM-5.2 for stronger work, with Opus used as an advisor for the hardest cases instead of a default routing target; benchmark testing is still running, and the report will be released later
+- Added batch memory updates so the agent can clean up and add memory in one step, reducing repeated memory-management loops
+- Added clearer credit visibility warnings for long-running backend services that are not registered scheduled tasks
+
+## 2.4.6
+
+- Added Extra High and Max reasoning tiers for supported models, including GLM 5.2, newer GPT-5 models, and Claude 4.6+
+- Improved agent reliability with clearer tool recovery for web fetch, preview, and file-edit failures, plus retries when models return only internal thinking during tool workflows
+
 ## 2.4.5
 
 - Added MCP & ACP support, letting Starchild connect external tools and work with ACP-compatible coding clients or harnesses
