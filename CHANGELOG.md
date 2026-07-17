@@ -1,40 +1,96 @@
 # Changelog
 
-## 2.4.16
+## 2.6.5
+
+- Added new /cost command to identify credit usage across scheduled tasks, background services, and conversations
+- Optimized background task setup: the agent now estimates daily and monthly costs before activation, helping prevent unexpected spend from high-frequency tasks
+- Improved reasoning recovery for GLM and other models, preventing unfinished tasks when reasoning exhausts the output limit
+- Improved background task model inheritance, file delivery, and preview error recovery
+- New models supported: meta/muse-spark-1.1, moonshotai/kimi-k3 
+
+## 2.6.4
+
+- Added /smart: unifies Advisor and Delegate in one feature — Advisor brings in a stronger model when tasks get stuck, while Delegate sends routine subtasks to lower-cost models; ask the agent to customize models, budgets, and limits for you
+- Improved context compression to keep long conversations coherent while preserving important memory and tool history; slimmer tool schemas also reduce baseline prompt size and per-turn cost
+- Fixed web search and file-transfer errors to provide clearer recovery guidance, and background tasks now correctly honor the model selected for the session
+
+## 2.6.3
+
+- Improved machine stability after updates and restarts, reducing dependency-related authentication failures and crash loops
+- Added clearer timeout and retry feedback when model providers are slow, with fewer unnecessary interruptions during tool calls
+- Strengthened conversation continuity after context compaction, preventing completed, outdated, or cancelled tasks from being resumed unexpectedly
+
+## 2.6.2
+
+- Hardened skill installation with automatic npx cache recovery, timeout cleanup, and cross-process locking to prevent repeated installation failures
+- Improved response reliability with stall-based upstream detection and visible retry notices when model providers stop responding; improved ChatGPT/Codex subscription reliability, restoring delegation for OAuth models and improving prompt caching and retry recovery
+- Added automatic redirects for removed models, allowing sessions pinned to older models to continue with supported replacements
+- Added new supported models: kwaipilot/kat-coder-air-v2.5 and kwaipilot/kat-coder-pro-v2.5
+
+## 2.6.1
+
+- Improved web fetch and OAuth timeout recovery with clearer, more accurate errors
+- Improved long-task continuity by preserving active targets and filtering unrelated history after context compaction
+
+## 2.6.0
+
+- Fixed agent-managed language preference updates, adding compatibility with regional locale formats such as zh-CN and en-US
+- Refined delegation to keep architecture-dependent work with the main agent, validate inputs before delegating, and provide better retry diagnostics
+
+## 2.5.9
+
+- Added automatic OAuth keep-fresh for connected ChatGPT/Codex and Grok subscriptions, with clearer provider-specific errors and notifications when new models become available
+- Added Meta Model API BYOK support, including Muse Spark 1.1 and live model discovery
+- Optimized delegation guidance to avoid unnecessary handoffs, reducing coordination overhead and cost for small tasks
+
+## 2.5.8
+
+- Improved Delegate reliability and cost control with stronger execution budgets, loop protection, compact action logs, and safer handling of large tool results
+- Reduced large-context cost blowups by enforcing absolute compaction limits and capping oversized tool-result batches before they enter the main prompt
+- Optimized the retry and error message guidance for OAuth models
+- Fixed skill batch installation races and redundant reinstalls after timeouts, making skill setup faster and less disruptive to active chats
+
+## 2.5.7
+
+- Added /checkup (alias /audit) for agent health checks, helping find unused skills, hidden credit drains, stale commands, memory issues, hooks/MCP problems, and workspace junk before applying any fixes
+- Improved Advisor Mode with better timing guidance, zero-parameter consults, structured usage metrics, and advisor support inside delegated executor sessions
+- Added Grok 4.5 reasoning-effort support and refreshed subscription model priority lists
+
+## 2.5.6
 
 - Continued tool schema slimming: moved more low-frequency tools to on-demand loading, further reducing baseline prompt size and per-turn cost
 - Upgraded delegation: executor turns are no longer capped by default, and existing default configs are automatically migrated so cost and timeout become the main execution budgets
 - Fixed task reliability issues: response footer hooks no longer corrupt task JSON, and bash heredoc content is no longer mistaken as code edits for verification reminders
 - Added the x402 skill (internal test) for building and using paid agent services
 
-## 2.4.15
+## 2.5.5
 
 - Added Tool Search: 16 low-frequency platform tools are now discovered on demand instead of being loaded into every request, reducing fixed prompt cost while keeping these tools fully available; improved platform-tool routing
 - Hardened skill updates to prevent unrelated third-party skills with the same name from overwriting installed official/versioned skills
 
-## 2.4.14
+## 2.5.4
 
 - Improved prompt caching for OpenAI-compatible providers by keeping per-turn volatile context out of the stable prefix, reducing repeated input cost on long conversations
 - Strengthened /goal: the agent now defines what "done" means before working, and completion is judged against concrete verification evidence instead of self-reported claims
 - Fixed Smart Routing: stronger follow-up handling, and safer fallback behavior when classification fails
 
-## 2.4.13
+## 2.5.3
 
 - Improved memory reliability during long conversations: important facts from compacted or pruned context are now flushed to memory before they are lost
 - Added a verification safety gate: after code changes, the agent can prompt itself to run tests or checks before claiming work is complete
 
-## 2.4.12
+## 2.5.2
 
 - Added proactive memory synthesis, helping the agent understand ongoing user work, recent activity, and useful next steps while keeping owner-specific context behind trusted agent profiles
 - Improved memory updates with fuzzy matching and clearer recovery hints when a memory entry cannot be found exactly
 - Improved prompt guidance for live market prices, background task delivery, skill loading, local shell usage, and user-facing file paths
 
-## 2.4.11
+## 2.5.1
 
 - Added Claude Fable 5 back and adjusted its provider priority to use Anthropic first, preventing empty replies or unwanted provider fallback; removed the old Fable-to-Opus redirect
 - Added clearer guidance when a model refuses a request for content-safety reasons (Fable 5 safety check)
 
-## 2.4.10
+## 2.5.0
 
 - Improved bash failure recovery with clearer guidance when commands exit without any output
 - Added large web page paging support so oversized fetch results can be saved locally and reviewed in smaller chunks
