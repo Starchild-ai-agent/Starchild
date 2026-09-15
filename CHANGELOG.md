@@ -1,5 +1,299 @@
 # Changelog
 
+## 3.1.6
+
+- Cleaned up the system prompt by removing redundant guidance, keeping the instruction layer lean without losing any behavior
+- Refreshed skill docs: fixed broken links and aligned project-builder routing and Upbit setup guidance with current contracts
+- Fixed internal AI calls to carry a consistent Starchild prompt prefix, so cost and behavior attribution across providers is fully auditable
+
+## 3.1.5
+
+- Improved context reuse on long, tool-heavy tasks: more cached context is reused while full tool results remain retrievable after trimming; summary defaults now use a faster, lower-cost model
+- Fixed visual QA to use an updated fallback model with clearer guidance, reducing false alarms about normal spacing and margins
+
+## 3.1.4
+
+- Added milestone-aware context cleanup: intermediate tool clutter is cleared as a task milestone finishes so next steps start fresh, while oversized command outputs are archived to disk for instant drill-down
+- Made project memory actionable: saved blockers, decisions, and tasks now track active versus resolved status, so the agent can accurately query open issues without misreading old notes
+- Fixed thread notifications for cross-session messages, and silent background tasks now stay quiet instead of triggering false alerts
+- New model supported: DeepSeek V4.1 Flash, the multimodal successor to V4 Flash with image input, suited for coding, terminal, computer-use agents, and long-horizon tasks
+
+## 3.1.3
+
+- Updated Conductor: Muse Spark 1.3 now powers the escalation lane for complex recovery attempts, with higher benchmark accuracy at lower token cost
+- Smoother long tasks: memory search runs on less RAM, and smarter context cleanup prevents mid-loop slowdowns while preserving tool result pointers
+- Fixed reply-language consistency after search and file reads, and cleaned up scheduled-task notifications to remove raw JSON wrappers
+
+## 3.1.2
+
+- Unified the image workflow: one upgraded image skill now handles generation, editing, background removal, inspection, and recoverable jobs while preserving existing user edits
+- Upgraded web search with freshness filters, news search, publication dates, and clearer result context
+- Enriched personal context: connectors now track recent Twitter, Calendar, Linear, Gmail, and Outlook activity with built-in noise filtering
+
+## 3.1.1
+
+- Added connector context: recent GitHub and Vercel activity now counts as evidence for profile synthesis, so a long-open machine whose only activity happens in connected apps stays up to date
+- Lowered background costs: summaries and profile updates use more efficient models, with less unnecessary reasoning and fewer truncated summaries
+- Fixed missing-command errors to provide actionable recovery guidance, and compaction now respects custom token budgets
+
+## 3.1.0
+
+- Condensed Conductor rules to reduce prompt overhead while preserving model strategy
+- Improved task context reliability: compaction preserves the user's latest request, and stale or unsupported task history no longer resurfaces as current work
+- Fixed skill installation to report failed results with actionable failure details
+
+## 3.0.9
+
+- Improved task state reliability: evidence-backed status updates and atomic summaries prevent false completions, accidental task renames, and stale progress after session clears
+- Fixed session tool errors to provide clear recovery guidance instead of bare failures; skill operations are now serialized to prevent concurrent corruption
+
+## 3.0.8
+
+- Updated the delegation model: background tasks now use the latest Flash model fallback chain while preserving explicit model overrides
+- Improved task completion and self-learning: failed delegations recover with their evidence intact, memory updates retry safely, and verified outcomes feed future improvements
+- New model supported: GPT-6 Astra, combining adjustable reasoning depth, long-context understanding, and advanced tool use for complex coding, deep research, and multi-step workflows
+
+## 3.0.7
+
+- Updated Conductor rules: Gemini 3.8 Flash now handles hard reasoning and strong-tier tasks
+- Improved task state reliability with cross-thread completions, time-aware profile synthesis, and task-plan validation to reduce stale or inaccurate progress
+- Fixed background execution: failed jobs no longer trigger extra agent turns or recursive work, and raw failure logs are redacted before reaching chat history
+
+## 3.0.6
+
+- Made thread summaries reliable: thread titles, context, and open tasks now stay current instead of silently failing when summaries are truncated
+- Fixed invalid or retired models to automatically fall back to the next available model instead of stopping the task; the migration bonus is no longer claimed by Starchild itself
+- New models supported: Google Gemini 3.8 Flash (roughly six points higher on long-horizon SWE benchmarks at the same price) and Meta Muse Spark 1.3 (flagship agentic model built for multi-agent workflows and complex coding)
+
+## 3.0.5
+
+- Improved memory: every saved topic fact now records its source and originating conversation, enabling safer audits, corrections, and source-specific forgetting
+- Fixed guests being able to publish the preview service to public
+
+## 3.0.4
+
+- Improved memory continuity: profile context stays fresher during active conversations and carries more reliably across sessions; truncated memory updates are now detected instead of silently disappearing
+- Fixed background tasks to remain responsive with large logs, stream updates efficiently, and deliver reliable completion notifications without blocking the agent
+
+## 3.0.3
+
+- Added verifiable tasks: plans can verify completion through concrete checks instead of relying solely on the agent's self-report
+- Improved the MCP OAuth workflow: the agent guides setup, accepts the callback URL, and reloads the connection automatically with no manual commands required
+- Fixed verified failures to feed back into future improvements, and large memory updates are now preserved and safely compacted in the background
+
+## 3.0.2
+
+- Improved task delivery reliability: every completed plan now receives a one-time evidence audit before the final response, with claimed workspace artifacts checked automatically while text-only deliverables remain lightweight
+- Fixed re-verification so changed plans are re-checked but completed work is not repeatedly audited; optimized error display
+
+## 3.0.1
+
+- Updated Conductor rules (v3.3): everyday conversations and multi-step tasks now default to GLM-5.3 Flash, delivering higher accuracy and faster responses as Luna's recent performance has declined
+- Improved task completion reliability: interrupted work resumes from richer checkpoints, delivery requirements survive compaction, open plans are verified before completion, and repetitive output loops stop before wasting another generation round
+
+## 3.0.0
+
+- Added persistent task plans: complex tasks can now be saved, resumed, and completed across background sessions, with deduplication, recovery, and completion receipts to prevent lost or repeated notifications
+- Improved Conductor routing to preserve session context and adapt to previous model and tier choices
+- Fixed unavailable tools being advertised, and rollout status now reflects the actual success rate
+- New model supported: Tencent Hy4 preview
+
+## 2.9.9
+
+- Improved connector guidance: connected apps now provide clearer capability guidance, and the agent uses existing Composio authorizations first
+- Fixed memory writes being dropped by near-duplicate checks; overlapping entries can now be consolidated safely in the background. Fixed delegation guidance when the tool is not available
+
+## 2.9.8
+
+- Updated Conductor Mode (v3.2): a four-tier routing ladder with a dedicated mid tier for routine multi-step work, Gemini 3.7 Flash for hard reasoning, and Grok 4.6 as a recovery-only escalation lane
+- Added visual QA before delivery: the agent can inspect rendered pages, charts, slides, and documents, returning structured blocking findings through a benchmarked vision-model fallback chain
+- Fixed Telegram-linked threads to receive task-completion notifications directly, and memory tools no longer silently drop updates caused by re-encoded locators or malformed batch inputs
+
+## 2.9.7
+
+- Fixed MCP OAuth 2.1 setup: authentication now returns to the correct frontend callback instead of ending on a 404, with CIMD support for metadata-based client identification
+- Added tg as a compatible alias for Telegram, and clearly separated internal runtime guidance from user messages so the agent answers the actual request instead of acknowledging system instructions
+- Retired model IDs are redirected to supported successors, while invalid selections fall back safely instead of causing spawned tasks to fail
+
+## 2.9.6
+
+- Added execution-first assistance: the agent now acts on corrections and requested next steps in the same turn, repairing the actual result instead of only acknowledging the issue
+- Made scheduled automation safer: tasks are test-run and verified before activation, with upfront cost estimates for recurring jobs
+
+## 2.9.5
+
+- Updated Conductor Mode: introduced GLM 5.3 as the escalation model, with upgraded task classification on an optimized 4-tier hierarchy (Cheap, Normal, Strong, Escalation) so straightforward tasks resolve instantly while complex reasoning routes to dedicated heavy-reasoning engines
+- Clarified budget controls: advisor usage is now governed by cost-based budgets instead of a fixed session call count, and blocked advisor calls include clear guidance for adjusting the configuration
+- New model supported: DeepSeek V4 Flash Vision Exp, with the same text capabilities as V4 Flash 0731 plus multimodal (image) input
+
+## 2.9.4
+
+- Added opt-in skill write notifications: web notifications now appear when skill_manage creates, edits, patches, deletes, or updates a skill; disabled by default and configurable through the agent
+- Made thinking concise by default: the agent focuses on the current question and avoids repetitive restatements and recaps, while preserving verification, tool use, and safety checks
+
+## 2.9.3
+
+- Added a Conductor thinking effort floor: expanded the effort ladder and added benchmarked floors for selected models while preserving explicit user controls
+- Clarified MCP and skill guidance with a reference covering all three MCP channels; the system now distinguishes callable tools from script-based workflows and reports actual registration results instead of promising unavailable tools
+
+## 2.9.2
+
+- Updated Conductor Mode: Gemini 3.7 Flash now handles escalation and media tasks at lower cost with high performance; thinking effort adapts to task complexity, and "think harder" still forces maximum depth
+- Improved streamed reasoning clarity: consecutive thinking rounds are now separated during tool-heavy turns
+- Fixed memory placement: source, scope, and time scale are used to keep preferences, rules, and project facts in the right place
+
+## 2.9.1
+
+- Upgraded read_file capabilities: extract common document formats, detect scanned PDFs, safely handle large files, and page through long documents
+- Fixed skill updates to be safer and evidence-based, cleaned up user-profile memory, and improved failure handling clarity
+
+## 2.9.0
+
+- Fixed the compaction boundary: context compaction now waits for a safe turn boundary, preserving prompt-cache reuse during tool-heavy work while retaining emergency overflow protection
+- Added skill tool recovery: when a tool belongs to an installed but unloaded skill, the agent identifies the correct skill and loads newly installed or updated capabilities automatically
+
+## 2.8.9
+
+- Added a machine memory guard: the system monitors host memory headroom to protect the main chat from container crashes and abrupt restarts; heavy background workloads like Web Previews are admitted safely and paused gracefully under memory pressure
+- Made skill updates safer: pinned and locally customized skills are protected from automatic overwrites, with explicit pin/unpin controls
+- Updated delegation and advisor: oversized delegations are redirected toward chunked parallel execution, and routine consultations use a cheaper model (Gemini 3.7)
+
+## 2.8.8
+
+- Added smarter escalation: before concluding a task is impossible, the agent checks for an existing capability first and asks for help, reducing false "can't be done" refusals
+- Cleaned up memory: implementation trivia no longer displaces behavioral rules in long-term memory and is routed to the topic store instead; facts that prove durable are promoted from topics into memory automatically
+- Improved the self-learning loop: every skill carries a real success ledger, skills can accumulate scripts and reference assets, and agent-created skills that consistently fail are surfaced for repair
+
+## 2.8.7
+
+- Added /smart assist levels (internal test): /smart off, /smart on (default), /smart anchor, and /smart guard, independent from /model; anchor keeps the primary model focused on planning, reasoning, and judgment while delegating mechanical work to a cheaper executor, and guard keeps advisor support available as a quality floor for budget-tier models
+- Improved context and cache stability through stale tool demotion, volatile-tail handling, zombie action replay prevention, and persisted hygiene across restarts
+- Improved reliability: long-running delegations can move to the background without becoming orphaned, and session_status now applies stricter user and session ownership checks and reports stored tool outputs more accurately
+
+## 2.8.6
+
+- Added MCP OAuth 2.1 support: MCP connections can now securely authenticate through OAuth 2.1, with authorization, token storage, reconnection, and user-isolated access control
+- Optimized workflows: background tasks preserve partial results, cross-session messaging is protected from loops and excessive spending, action results survive restarts without replaying, and thread titles and file links render more reliably
+- Fixed compaction: long sessions now compact less often and more intelligently, reducing prompt-cache misses and unnecessary cost while preserving conversation context and the latest task focus
+
+## 2.8.5
+
+- Added cross-session handoffs: agents can send summary context to another thread of the same user to steer live work, queue a follow-up, or wake an idle thread automatically; handoffs are user-isolated, fail-closed, never include full history or files, and remain visible in thread history with clear cross-message UI
+- Improved context management: large-window models compact less frequently, keeping long sessions more stable and reducing summary drift
+
+## 2.8.4
+
+- Finalized Conductor v3: expanded the benchmark dataset to evaluate performance across thinking levels; Luna's x-high mode now serves as the primary model for complex tasks due to its outstanding results and competitive cost
+- Improved the long task loop verifier with better compaction stability, preserved important file activity, and safer loop completion and verification
+
+## 2.8.3
+
+- Added /compact focus <topic> to preserve important topics through the next compaction
+- Improved compaction to keep long conversations stable and reduce context drift on large-window models
+- Improved completion reliability: background work is isolated from the main chat and verified against item-specific evidence before completion, with clearer updates and safe pauses when verification fails
+
+## 2.8.2
+
+- Updated Conductor Mode rules: clearer model routing, with DeepSeek V4 Flash for simple tasks and Kimi K3 for escalation, plus stronger fallbacks and classifier retry recovery
+- Improved reliability for WebSocket connections, Telegram media delivery, and empty provider responses
+- Fixed long-session stability with safer compaction and fewer compaction loops
+
+## 2.8.1
+
+- Unified planning management: long-term plans and task workflows now use a shared directory and index, keeping work organized and easier to track
+- Improved task progress reliability: progress, budgets, pause/resume states, and completion status are preserved more consistently across long-running work and restarts
+- Prevented zombie tasks: completed work remains finished after compaction, while long sessions prioritize the latest user message and stop safely instead of burning credits in repeated compaction loops
+
+## 2.8.0
+
+- Prevented disk-full stalls: reserved recovery space is released automatically, then reclaimed when storage recovers; cleanup never touches workspace files
+- Improved long-session stability by preventing repeated context-compaction loops under heavy workloads
+- Added a complete plan lifecycle with an open-plan index, durable knowledge saved to docs, and safe cleanup after completion
+- Made failures clearer: interrupted tool calls and preview port exhaustion now explain what happened and how to recover
+
+## 2.7.9
+
+- Improved reasoning recovery: models that exhaust their token budget on thinking now retry with a reduced reasoning budget before safely disabling reasoning, preventing empty or incomplete replies
+- Upgraded MCP support: server configurations persist across updates, reload automatically with .env changes, and load large toolsets on demand to reduce prompt size
+- Fixed preview startup timeout handling with clearer errors and recovery guidance
+
+## 2.7.8
+
+- Updated the wallet skill: agents can now see user login and secondary wallet addresses
+- Fixed empty replies on small token budgets and hanging streams after a circuit-break
+- New model supported: DeepSeek V4 Flash 0731, re-post-trained for stronger coding, reasoning, and agent workflows
+
+## 2.7.7
+
+- Added user personal wallet actions: the agent can request secure message signing or transactions from the user's linked login or secondary wallet (EVM and Solana), with every request appearing in the user's own wallet for review and approval before anything executes
+- Strengthened wallet reliability and safety with automatic wallet synchronization, background recovery, server-side validation, and protection against stale wallet bindings
+- Fixed Preview wrongly blocking pages whose titles contain non-Latin characters
+
+## 2.7.6
+
+- Smarter capability discovery: agents now prioritize built-in tools and installed skills, then recommend installable skills or paid x402 services when needed; search is faster and better handles long or mixed-language queries
+- Safer background tasks: large file writes, truncated tool calls, and repeated-action loops now receive safe, tool-specific recovery guidance instead of failing midway
+- Fixed visible replies after heavy reasoning, clarified memory-search guidance, added safer web-search backoff during quota failures, and restored access to Topic tools
+
+## 2.7.5
+
+- Improved model recovery: harmless requests blocked by provider filters can retry with another model family and stay there until the task finishes
+- Prevented truncated tool calls and incomplete file writes from silently succeeding or entering repeated retry loops
+- Strengthened completion verification by defining required evidence upfront and using a different model provider to review the work
+- Added live MCP tool updates so newly available server tools appear without reconnecting
+
+## 2.7.4
+
+- Improved conversation reliability: fixed duplicate or missing replies after reconnects, protected compacted summaries in long sessions, and made memory errors clear instead of failing silently
+- Leaner tool system: low-frequency tools load full details on demand, reducing per-turn token cost while improving execution safety and cost attribution
+- Strengthened /goal verification: independent verification now requires concrete evidence, filtering out vague, repeated, or unactionable objections
+- New model supported: Qwen 3.7 Flash
+
+## 2.7.3
+
+- Reduced token usage on Claude Opus 5 conversations with the same quality at lower cost
+- Fixed background restart issues so the agent no longer gets cut off mid-task
+
+## 2.7.2
+
+- Fixed prompt-cache boundaries being broken when Hooks or routing notices inject context, reducing unnecessary cache misses, latency, and cost
+- Improved Smart Routing fallbacks so each model receives the correct model-specific guidance
+
+## 2.7.1
+
+- Added compaction safety with a two-tier trust boundary that preserves top-level user instructions while preventing nested tool, web, file, and quoted content from being promoted into persistent directives
+- Improved tool reliability: reduced false dangerous-command blocks for quoted grep/sed patterns while preserving command-substitution detection; fixed GLM-style placeholders, session-search error categorization, and JSON parsing recovery guidance
+
+## 2.7.0
+
+- Upgraded long-term memory: conversations are captured more reliably, repeated or outdated facts are cleaned up automatically, and stored knowledge stays better organized and easier to recall
+- Improved scheduled-task recovery: invalid schedules and environment issues now return clearer causes and actionable guidance
+- Fixed npm/npx connectivity behind the platform proxy, improving skill installation reliability
+
+## 2.6.9
+
+- Reduced repeated prompt costs by stabilizing dynamic prompt blocks and improving cache reuse across turns
+- Added automatic memory maintenance to detect stale, duplicate, or conflicting memories and safely rebuild memory indexes; memory reviews no longer trigger on background or benchmark sessions, and every compaction is fully auditable
+- Delegated tasks can now checkpoint progress and continue in a fresh executor session when they approach time, cost, or iteration limits
+
+## 2.6.8
+
+- Added proactive project follow-ups (internal test): the agent can track ongoing work, notice stale projects, suggest a continuation at natural moments, and learn from user reactions without background polling or extra model calls
+- Smarter delegation and verification: code subtasks can use task-aware model chains with configurable routing and more accurate cost limits; the agent recognizes when search or verification resources are unavailable, labels unverifiable claims, records verification results, and supports configurable verification strictness
+- Fixed Codex conversations breaking on orphaned tool results, improved restored multimodal recall, and preserved background notifications for image-only messages
+
+## 2.6.7
+
+- Strengthened memory and session recovery, including automatic repair of corrupted memory indexes and protection against stale interrupted replies resurfacing
+- Made long conversations more reliable with smarter context pruning that preserves active multi-tool workflows while reducing old tool-result overhead
+- Fixed stale partial replies being restored into new conversations, standardized compaction summaries, and added clearer opt-in memory notifications
+- New model supported: thinkingmachines/inkling
+
+## 2.6.6
+
+- Added smarter memory recall with semantic and keyword search, allowing saved memories and user preferences to be found through paraphrased queries
+- Added clearer relevance levels and safer degraded-mode recovery, keeping memory search reliable when the vector index is temporarily unavailable
+
 ## 2.6.5
 
 - Added new /cost command to identify credit usage across scheduled tasks, background services, and conversations
