@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.7
+
+- Added cross-thread awareness: the agent sees scheduled jobs and active runs across conversations, uses real sidebar titles, and sends clearer task handoffs
+- Improved tool recovery: repeated tool errors trigger a change of approach or escalation, while leaner guidance reduces unnecessary tool calls
+- Fixed scheduled-task templates to allow longer execution and show readable failure messages instead of raw tracebacks, without automatically retrying potentially completed work
+
 ## 3.1.6
 
 - Cleaned up the system prompt by removing redundant guidance, keeping the instruction layer lean without losing any behavior
