@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.8
+
+- Faster tool workflows: supported read-only commands now run alongside other tools instead of waiting in line
+- Cheaper long conversations: fixed a cache miss on the first call after a new message, cutting the hidden cost of long sessions
+
 ## 3.1.7
 
 - Added cross-thread awareness: the agent sees scheduled jobs and active runs across conversations, uses real sidebar titles, and sends clearer task handoffs
