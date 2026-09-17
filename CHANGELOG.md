@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.9
+
+- Improved web intelligence: search now taps into real-time web content and X discussions with Grok-powered fallback, and page extraction automatically renders JavaScript-heavy sites in a browser
+- Fixed task memory: long conversations reliably preserve delivery requirements, user-shared links, and blocked attempts across cleanups, so the agent always knows what is left to finish
+
 ## 3.1.8
 
 - Faster tool workflows: supported read-only commands now run alongside other tools instead of waiting in line
